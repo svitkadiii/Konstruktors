@@ -6,11 +6,20 @@ import time #laika ģenerēšana
 import yaml #nolasa žurnalēšanas konfiguraciju
 
 from datetime import datetime
+from configparser import ConfigParser
 print('Asteroid processing service')
 
 # Initiating and reading config values
 print('Loading configuration from file')
+try:
+	config = ConfigParser()
+	config.read('config.ini')
 
+	nasa_api_key = config.get('nasa', 'api_key')
+	nasa_api_url = config.get('nasa', 'api_url')
+except:
+		logger.exception('')
+print('DONE')
 # definēta api url un api key
 nasa_api_key = "OmhKz2HZuxCNbgsIErXbKVtUNPgzUW3ule2UZ9fq"
 nasa_api_url = "https://api.nasa.gov/neo/"
@@ -52,8 +61,7 @@ if r.status_code == 200:
 						else:
 							tmp_ast_diam_min = -2
 							tmp_ast_diam_max = -2
-		  
-			else:
+					else:
 						tmp_ast_diam_min = -1
 						tmp_ast_diam_max = -1
 

@@ -21,9 +21,6 @@ except:
 		logger.exception('')
 print('DONE')
 # definēta api url un api key
-nasa_api_key = "OmhKz2HZuxCNbgsIErXbKVtUNPgzUW3ule2UZ9fq"
-nasa_api_url = "https://api.nasa.gov/neo/"
-
 # Getting todays date
 dt = datetime.now()
 request_date = str(dt.year) + "-" + str(dt.month).zfill(2) + "-" + str(dt.day).zfill(2)  

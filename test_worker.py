@@ -1,5 +1,6 @@
 from worker_2_db import *
 
+
 print("Asteroid worker test")
 print("----------")
 print("Testing function: \"sort_ast_by_pass_dist\"")
@@ -31,5 +32,14 @@ assert sort_ast_by_pass_dist(list_unsorted_index_short) == []
 print("OK")
 print("----------")
 
+# Testing if squareroot of speed is valued properly
+print("Speed squareroot compared with 1000")
+tmp_ast_speed1 = 10000000 #will be fast
+tmp_ast_speed2 = 3456    #will be slow
+assert speedTest(tmp_ast_speed1) >=1000 and speedTest(tmp_ast_speed2)<1000
+print("Good")
+print("----------")
+
 print("Asteroid worker test -> ALL OK")
 print("----------------------------------------")
+

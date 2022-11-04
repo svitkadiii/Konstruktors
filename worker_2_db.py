@@ -6,6 +6,7 @@ import json
 import datetime
 import time
 import yaml
+import math
 
 from datetime import datetime
 from configparser import ConfigParser
@@ -82,6 +83,23 @@ def sort_ast_by_pass_dist(ast_arr):
 def sort_ast_by_time(ast_arr):
 	ast_hazardous.sort(key = lambda x: x[4], reverse=False)
 	return ast_hazardous
+
+def speedTest(tmp_ast_speed):
+	if math.sqrt(tmp_ast_speed) >= 1000:
+		print("Speed is very fast = "+ str(tmp_ast_speed))
+		return math.sqrt(tmp_ast_speed)
+	else:
+		print("Very slow asteroid "+ str(tmp_ast_speed))
+		return math.sqrt(tmp_ast_speed)
+
+
+
+
+
+
+
+
+
 
 if __name__ == "__main__":
 
